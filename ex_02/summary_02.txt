@@ -1,0 +1,15 @@
+# Explanation of modified points (required)
+The TO-DO list in func.c file contains 6 parts need to be filled in total, they set up the arguments and states in the initializing and traversal process, and also follow the steps of the DFS and BFS algorithms. I already completed all of them, then compile and run the program. The command line:
+     gcc -Wall -std=c99 -O2 -o ./a.out prog_02.c func.c queue.c
+Need to be changed into
+     gcc -Wall -std=c99 -O2 -o ./a.out prog_02.c func.c s_queue.c
+(Because the file named "s_queue.c")
+The result in the file result_02.txt is the same as in the file answer_02.txt
+
+# Discussion (if needed)
+The exercise is useful for me to revise DFS and BFS algorithms
+
+# Comments (if needed)
+README.md file should have English version
+
+
