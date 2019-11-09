@@ -1,10 +1,13 @@
 # Explanation of modified points (required)
+The TODO-list has 5 parts have to complete, which set the arguments, states, the conditions following the process of 4 types of searching algorithms including BFS, uniform cost, best first search and A star algorithm. The explanation of the implementation is easy to understand and follow so I have already finished the assignment, then compile and run the program by the below command lines:
+     make test
+     gcc -Wall -std=c99 -O2 -o ./a.out prog_04.c func.c s_queue.c
+     diff -y --suppress-common-lines answer_04.txt result_04.txt
+The result in the file result_03.txt is the same with one in the file answer_04.txt.
 
 
 # Discussion (if needed)
-
+ The exercise is very helpful for me to revise BFS algorithm and also learn how to implement new algorithm, which are uniform cost search, best first search and A* algorithm.
 
 # Comments (if needed)
-
-
-
+README.md file should have English version, especially for the international students like us to understand the program more clearly.

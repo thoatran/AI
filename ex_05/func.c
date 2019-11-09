@@ -120,7 +120,8 @@ static Rule* resolve_conflict(ProductionSystem const* p_system)
     for (size_t i = 0; i < p_system->conflict_count; i++) {
         if (p_system->conflict_set[i]->is_used == false) {
             // TODO: 1. add rule into the selected rules when the i-th element in the conflict set was not used.
-            /* ----------------------------------------------------------------- */
+            selected_rules[num_selected_rules] = p_system->conflict_set[i];
+            num_selected_rules ++;
         }
     }
 
@@ -137,14 +138,14 @@ static Rule* resolve_conflict(ProductionSystem const* p_system)
     // TODO: 2. In following strategy execution, you must specify optimal rule for each case.
     //          Set a suitable comparator function as the argument.
     // NOTE: `bubble_sort` updates elements set (`selected_rules` in this context) in descending order.
-    bubble_sort(selected_rules, num_selected_rules, sizeof(Rule*), /* ---------------- */);
+    bubble_sort(selected_rules, num_selected_rules, sizeof(Rule*), compare_time_tag);
 
     // Checking whether there are no rules which has same time tag.
     if (find_newest_time_tag(selected_rules[0]) != find_newest_time_tag(selected_rules[1])) {
         printf("Resolve: step 2\n");
 
         // TODO: 3. Return newest rule.
-        return /* ----------------- */;
+        return selected_rules[0];
     }
 
     // If there are rules which has same time tag, remove not duplicated rules.
@@ -160,14 +161,14 @@ static Rule* resolve_conflict(ProductionSystem const* p_system)
 
     // LEX strategy 3: Select rule which has many conditions.
     // TODO: 4. Set a suitable comparator function as the argument.
-    bubble_sort(selected_rules, num_selected_rules, sizeof(Rule*), /* ------------------ */);
+    bubble_sort(selected_rules, num_selected_rules, sizeof(Rule*), compare_conditions);
 
     // Checking whether there are no rules with the same number of condition.
     if (selected_rules[0]->condition_count != selected_rules[1]->condition_count) {
         printf("Resolve: step 3\n");
 
         // TODO: 5. Return effective rule which contains many conditions.
-        return /* ----------------- */;
+        return selected_rules[0];
     }
 
     // If there are rules which has has many conditions, remove not duplicated rules.
@@ -186,7 +187,7 @@ static Rule* resolve_conflict(ProductionSystem const* p_system)
     // LEX strategy 4: Select randomly.
     // TODO: 6. Generate random index using `rand_xorshift`.
     // Do NOT use `rand` function because it depends on a system environment.
-    uint32_t random_idx = /* ------------------------------------ */;
+    uint32_t random_idx = rand_xorshift();
     return selected_rules[random_idx];
 }
 

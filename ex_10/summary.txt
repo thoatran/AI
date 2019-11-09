@@ -1,5 +1,16 @@
 # Explanation of modified points (required)
 
+TO-DO list has 4 parts to be completed in total:
++ TO-DO 1: calculate the most similar reference pattern using euclidean distance using euclidean_distance function.
++ TO-DO 2: update the predicted label of the feature vector if a more similar reference pattern is found.
++ TO-DO 3: establish euclidean_distance function.
++ TO-DO 4: counte the number of valid results 
+I have already completed all, then compile and run the program by the following command line:
+           make test
+           gcc -Wall -std=c99 -O2 -o ./a.out prog.c func.c 
+           diff -y --suppress-common-lines answer.txt result.txt
+The result in the output file(result.txt) is the same with in the file answer.txt.
+
 
 # Discussion (if needed)
 

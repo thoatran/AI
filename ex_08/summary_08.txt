@@ -1,8 +1,18 @@
 # Explanation of modified points (required)
++) For prog_08_01.pl
+Because in Prolog, “⇒” is replaced by “:-”, and “∧” is replaced by “,” to make it easier to input the symbols using keyboard, I converted 
+             p(X,Y) ∨ ¬q(X) ∨ ¬r(Y) into p(X, Y):- q(X), r(Y).
+             q(X) ∨ ¬s(X)           into q(X):- s(X).
+             r(Y) ∨ ¬t(Y)           into r(Y):- t(Y).
+             s(a)                   into s(a).
+             t(b)                   into t(b).
+Then I run to test the program and the result was correct
 
++) For prog_08_02.pl: Try the program given in p. 29 by saving the program
+The result was the same with one given in the slide.
 
 # Discussion (if needed)
-
+The exercise is useful for me to understand the simple program in Prolog
 
 # Comments (if needed)
 

@@ -209,7 +209,7 @@ static FuncSignature conv_func_signature_from_name(char const* func_name)
  */
 static bool logic_func_not(bool x)
 {
-    // TODO: 1. Write logical operation,
+    return (!x);
 }
 
 
@@ -221,7 +221,7 @@ static bool logic_func_not(bool x)
  */
 static bool logic_func_and(bool x, bool y)
 {
-    // TODO: 2. Write logical operation,
+    return (x<y?x:y);
 }
 
 
@@ -233,9 +233,8 @@ static bool logic_func_and(bool x, bool y)
  */
 static bool logic_func_or(bool x, bool y)
 {
-    // TODO: 3. Write logical operation,
+    return (x>y?x:y);
 }
-
 
 /**
  * @brief Function for implication operator.
@@ -245,5 +244,5 @@ static bool logic_func_or(bool x, bool y)
  */
 static bool logic_func_imp(bool x, bool y)
 {
-    // TODO: 4. Write logical operation,
+    return ((!x)>y?(!x):y);
 }

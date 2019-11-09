@@ -1,10 +1,22 @@
 # Explanation of modified points (required)
-
+The TODO list has 6 parts to be completed in total following the LEX strategy
++ TODO 1: add rule into the selected rules when the i-th element in the conflict set was not used to pick up the unused rules from the conflict set.
++ TODO 2: since `bubble_sort` updates elements set (`selected_rules` in this context) in descending order, I used compare_time_tag as FuncComparator for bubble sort.
++ TODO 3: return selected_rules[0] which is the newest rule.
++ TODO 4: use compare_conditions as FuncComparator for bubble sort
++ TODO 5: return selective_rule[0] as it contains many conditions.
++ TODO 6: use rand_xorshift() to select rules randomly since Do NOT use `rand` function because it depends on a system environment.
+I have already finished the task, then compile and run the program, by the following command lines:
+       make test
+       gcc -Wall -std=c99 -O2 -o ./a.out prog_05.c func.c
+       diff -y --suppress-common-lines answer_05.txt result_05.txt
+The result in file result_05.txt is the same with one in the file answer_05.txt
 
 # Discussion (if needed)
+The exercise is useful for me to learn the LEX strategy vis completing the coding to implement it. The instructions of all the files are very clear and easy to understand.
 
 
 # Comments (if needed)
-
+The instructions of all the files are very clear and easy to understand.
 
 

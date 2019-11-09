@@ -1,10 +1,18 @@
 # Explanation of modified points (required)
-
+The TO-DO list has 3 parts to be completed in total.
++ TO-DO 1: Fill in the bank parts for defuzzy using centroid by establishing the defuzzification formular.
++ TO-DO 2: Build the member ships function based on Mamdani's fuzzy inference method.
++ TO-DO 3: Apply Mamdani's fuzzy inference method to compute membership values.
+I have already completed all, then compile and run the program by the following command line:
+           make test
+           gcc -Wall -std=c99 -O2 -o ./a.out prog_09.c func.c 
+           diff -y --suppress-common-lines answer_09.txt result_09.txt
+The result in the output file(result_07.txt) is the same with in the file answer_07.txt.
 
 # Discussion (if needed)
 
 
 # Comments (if needed)
 
-
+The explanation and comment in the files are clear and easy to understand.
 

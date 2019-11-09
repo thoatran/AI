@@ -73,9 +73,11 @@ static void classify_vectors(Dataset const* dataset, size_t* predicted_labels, F
             FeatureVector const* reference_pattern = &reference_patterns[j];
 
             // TODO: 1. Calculate the most similar reference pattern using euclidean distance.
-            double distance = ;
+            double distance = euclidean_distance(input_vector->elements, reference_pattern->elements, dataset->feature_dimension);
             if (distance < min_distance) {
                 // TODO: 2. Update the predicted label of the feature vector if a more similar reference pattern is found.
+                *(predicted_labels+i) = reference_pattern->label;
+                min_distance = distance;
             }
         }
     }
@@ -156,6 +158,12 @@ static bool update_reference_pattern(Dataset const* dataset, size_t const* predi
 static double euclidean_distance(double const* v1, double const* v2, size_t length)
 {
     // TODO: 3. Update the predicted label of the feature vector if more similar reference patterns is found.
+    double distance = 0.0;
+    for ( size_t i = 0; i < length; i++) {
+        distance += (*(v1+i) - *(v2+i)) * (*(v1+i) - *(v2+i));
+    }
+    return distance;
+
 }
 
 
@@ -217,6 +225,8 @@ double validate(Dataset const* dataset, size_t* predicted_labels, FeatureVector*
     double correct_count = 0.0;
     for (size_t i = 0; i < dataset->feature_count; i++) {
         // TODO: 4. Count the number of valid results (predicted label == truth label or not).
+        if(*(predicted_labels + i) == (dataset->features + i) -> label)
+            correct_count += 1.0;
     }
 
     return correct_count / dataset->feature_count;

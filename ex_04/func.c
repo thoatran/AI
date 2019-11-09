@@ -111,16 +111,16 @@ static void base_bfs(Graph const* g, SearchType type)
     // TODO: 1. Based on each search type, set the arguments of `sortable_queue_init` functions.
     switch (type) {
         case SEARCH_TYPE_BFS:
-            s_queue_init(/*----*/);
+            s_queue_init(NULL);
             break;
         case SEARCH_TYPE_UNIFORM_COST:
-            s_queue_init(/*----*/);
+            s_queue_init(accumulate_costs);
             break;
         case SEARCH_TYPE_BEST_FIRST:
-            s_queue_init(/*----*/);
+            s_queue_init(g->heuristic_values);
             break;
         case SEARCH_TYPE_ASTAR:
-            s_queue_init(/*----*/);
+            s_queue_init(eval_values);
             break;
     }
 
@@ -174,7 +174,7 @@ static void base_bfs(Graph const* g, SearchType type)
                     child_accumulate_cost = accumulate_costs[current_vertex] + g->edge_costs[current_vertex][i];
 
                     // TODO: 2. Write the condition when this child vertex will be enqueued.
-                    if (/*--------------------------------*/) {
+                    if (*child_vertex_state == UNVISITED) {
                         *child_vertex_state = IN_QUEUE;
                         s_queue_enqueue(i);
 
@@ -192,7 +192,7 @@ static void base_bfs(Graph const* g, SearchType type)
                     break;
                 case SEARCH_TYPE_BEST_FIRST:
                     // TODO: 3. Write the condition when this child vertex will be enqueued.
-                    if (/*--------------------------------*/) {
+                    if (*child_vertex_state == UNVISITED) {
                         *child_vertex_state = VISITED;
                         s_queue_enqueue(i);
 
@@ -207,7 +207,7 @@ static void base_bfs(Graph const* g, SearchType type)
                     child_accumulate_cost = accumulate_costs[current_vertex] + g->edge_costs[current_vertex][i];
 
                     // TODO: 4. Calculate `child_eval_value`.
-                    child_eval_value = /*-------------------------------------------------------------------------------------------------------------------------------*/;
+                    child_eval_value = child_accumulate_cost + g->heuristic_values[i];
 
                     if (*child_vertex_state == UNVISITED) {
                         *child_vertex_state = IN_QUEUE;
@@ -224,8 +224,8 @@ static void base_bfs(Graph const* g, SearchType type)
                         // The cost until this child is already determined, but smaller cost is found.
                         // Therefore, it should be traversed again.
                         // TODO: 5. Make this child vertex traversable again
-                        /*------------------------------*/;
-                        /*------------------*/;
+                        *child_vertex_state = IN_QUEUE;
+                        s_queue_enqueue(i);
 
                         eval_values[i]      = child_eval_value;
                         accumulate_costs[i] = child_accumulate_cost;

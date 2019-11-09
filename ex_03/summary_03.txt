@@ -1,10 +1,15 @@
 # Explanation of modified points (required)
+ The TO-DO list have 5 parts to be completed in total, they set the argument and the states transition following to the DFS and BFS algorithm. The difference between this program and the previous program is that it calculate the accumulate costs during the DFS and BFS algorithms process, which help to find the shortest part to reach the target node from the initial node. I've already finished the task of this program, and then compile and run it by the following command lines:
+     make test
+     gcc -Wall -std=c99 -O2 -o ./a.out prog_03.c func.c s_queue.c
+     diff -y --suppress-common-lines answer_03.txt result_03.txt
+The result in the file result_03.txt is the same with one in the file answer_03.txt.
 
 
 # Discussion (if needed)
-
+The exercise is helpful for me to learn new algorithm, which is calculating the accumulate cost during the process of DFS and BFS algorithm.
 
 # Comments (if needed)
-README.md file should have English version 
+README.md file should have English version for the international students to be able to understand.
 
 

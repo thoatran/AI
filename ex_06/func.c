@@ -105,12 +105,12 @@ static Student const* find_student(StudentInfoFrame const* s_frame, char const* 
 {
     Student const* target = NULL;
     // TODO: 1. Fill in for statement to iterate each student.
-    for (/* ------------------------------------------- */) {
+    for (size_t i = 0; i < s_frame -> student_num; i++) {
         Student const* s = &s_frame->students[i];
         // TODO: 2. Fill in second argument to compare `name` and student name.
-        if (strcmp(name, /* -------------- */) == 0) {
+        if (strcmp(name, s -> get_name(s)) == 0) {
             // TODO: 3. Write variable which satisfies condition.
-            target = /* - */;
+            target = &s_frame -> students[i];
             break;
         }
     }

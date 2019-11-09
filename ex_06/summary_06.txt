@@ -1,4 +1,14 @@
 # Explanation of modified points (required)
+The TODO list has 3 parts to be completed. Thanks to that, function find_student() can do its own task (finding student by the name).
++ TODO 1: Because s_frame is the pointer to the given student information frame, so to iterate each student, we have run from i = 0 to i = s_frame->student_num.
++ TODO 2: Compare target student name (name) with name of each student (using function getname(s))
++ TODO 3: Write variable which satisfies condition.
+I have already finished the task, then compile and run the program, by the following command lines:
+       make test
+       gcc -Wall -std=c99 -O2 -o ./a.out prog_06.c student.c human.c object.c score_board.c func.c
+       diff -y --suppress-common-lines answer_06.txt result_06.txt
+The result in file result_06.txt is the same with one in the file answer_06.txt
+
 
 
 # Discussion (if needed)

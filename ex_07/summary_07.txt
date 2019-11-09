@@ -1,4 +1,14 @@
 # Explanation of modified points (required)
+There were 4 tasks in the TO-DO list:
++ TO-DO 1: I used !x to return the not operation of x.
++ TO-DO 2: I used (x<y?x:y) to return the AND operation of x and y, the value of AND operator should be smaller boolean values.
++ TO-DO 3: I used (x>y?x:y) to return the OR operation of x and y, the value of OR operator should be bigger boolean values.
++ TO-DO 4: I used ((!x)>y?(!x):y) to return the implication operation of x and y. Because implication of x and y is simply OR operation of (not x) and y, so I apply TO-DO 1 and TO-DO 3 to produce the result.
+I have already completed all, then compile and run the program by the following command line:
+           make test
+           gcc -Wall -std=c99 -O2 -o ./a.out prog_07.c func.c 
+           diff -y --suppress-common-lines answer_07.txt result_07.txt
+The result in the output file(result_07.txt) is the same with in the file answer_07.txt.
 
 
 # Discussion (if needed)
@@ -6,5 +16,5 @@
 
 # Comments (if needed)
 
-
+The exercise is useful for me to learn how to implement some logical operators and simple truth table. The explanation and comment in the coding file are also helpful and easy to understand.
 
