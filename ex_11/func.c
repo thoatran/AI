@@ -33,6 +33,7 @@ void train_sonnet(Sonnet* son, Dataset const* dataset)
         double* weight = son->weight_vectors[i];
         for (size_t j = 0; j < feature_dimension; j++) {
             // TODO: 1. Initialize the weight randomly.
+            *(weight + j) = frand_xorshift();
         }
     }
 
@@ -45,6 +46,11 @@ void train_sonnet(Sonnet* son, Dataset const* dataset)
             double min_distance = DBL_MAX;
             for (size_t k = 0; k < son->neuron_count; k++) {
                 // TODO: 2. Find the most similar prototype using euclidean distance.
+                double distance = euclidean_distance(feature, son->weight_vectors[k], dataset->feature_dimension);
+                if(distance < min_distance) {
+                    min_distance = distance;
+                    winner_index = k;
+                }
             }
             dataset->classified_tags[j] = winner_index;
 
@@ -52,6 +58,8 @@ void train_sonnet(Sonnet* son, Dataset const* dataset)
             double* winner_weight = son->weight_vectors[winner_index];
             for (size_t k = 0; k < feature_dimension; k++) {
                 // TODO: 3. Update the weights.
+                *(winner_weight+k) = *(winner_weight+k) + son->learning_rate * (*(feature+k) - *(winner_weight+k));
+
             }
         }
     }

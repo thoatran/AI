@@ -1,5 +1,14 @@
 # Explanation of modified points (required)
-
+Some production rules:
+if x5<0.23154 
+    if x5<0.04144 then b
+    else
+       if x24<-0.05605 then g
+       else b
+       endif 
+    endif
+else
+    if x27<0.999945 and x8<0.89669 then b
 
 # Discussion (if needed)
 

@@ -1,8 +1,17 @@
 # Explanation of modified points (required)
+I finished 3 tasks in the TO-DO list
++ TO-DO 1: Generate the weights (of the prototypes)randomly using frand_xorshift() function.
++ TO-DO 2: Find the Euclidean distance between a given pattern x and a prototype. and updated min_distance.
++ TO-DO 3: Update the weights of the winner neuron.
+
+I have already finished all the tasks, then compile and run the program by the following command lines:
+      make test
+      make plot
+      diff -y --suppress-common-lines answer.txt result.txt
+The result in the file output result.txt is the same with the one in file answer.txt
 
 
 # Discussion (if needed)
-
 
 # Comments (if needed)
 

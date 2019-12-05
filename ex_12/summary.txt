@@ -1,4 +1,16 @@
 # Explanation of modified points (required)
+The TO-DO list has 3 tasks to be completed in total.
++ TO-DO 1:  Write unipolar sigmoid function (lambda = 1).
+                 sigmoid(x) = 1/(1 + exp(-x))
++ TO-DO 2: create a function to calculate the inner product 
++ TO-DO 3: calculate the error of the output layer for backpropagation with the activation function in this program is `the unipolar sigmoid function`.
++ TO-DO 4: Update weight based on backpropagation.
+
+I have already finished the tasks , then compile and run the program by following command lines:
+        Make test
+        gcc -Wall -std=c99 -O2 -o ./a.out prog.c func.c
+        diff -y --suppress-common-lines answer.txt result.txt
+The result in file result.txt is the same with the one in file answer.txt
 
 
 # Discussion (if needed)

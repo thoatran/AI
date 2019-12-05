@@ -1,5 +1,43 @@
 # Explanation of modified points (required)
 
+Decision tree for classification
+ 1  if x5<0.23154 then node 2 elseif x5>=0.23154 then node 3 else g
+ 2  if x5<0.04144 then node 4 elseif x5>=0.04144 then node 5 else b
+ 3  if x27<0.999945 then node 6 elseif x27>=0.999945 then node 7 else g
+ 4  class = b
+ 5  if x24<-0.05605 then node 8 elseif x24>=-0.05605 then node 9 else b
+ 6  if x8<-0.89669 then node 10 elseif x8>=-0.89669 then node 11 else g
+ 7  if x1<0.5 then node 12 elseif x1>=0.5 then node 13 else b
+ 8  class = g
+ 9  class = b
+10  class = b
+11  if x3<0.73125 then node 14 elseif x3>=0.73125 then node 15 else g
+12  class = b
+13  if x3<0.73004 then node 16 elseif x3>=0.73004 then node 17 else b
+14  if x14<0.17103 then node 18 elseif x14>=0.17103 then node 19 else g
+15  if x10<-0.755855 then node 20 elseif x10>=-0.755855 then node 21 else g
+16  class = b
+17  if x22<0.47714 then node 22 elseif x22>=0.47714 then node 23 else g
+18  if x7<0.92561 then node 24 elseif x7>=0.92561 then node 25 else g
+19  if x6<0.23199 then node 26 elseif x6>=0.23199 then node 27 else b
+20  class = b
+21  if x4<-0.146965 then node 28 elseif x4>=-0.146965 then node 29 else g
+22  if x6<-0.727275 then node 30 elseif x6>=-0.727275 then node 31 else g
+23  class = b
+24  if x28<-0.23939 then node 32 elseif x28>=-0.23939 then node 33 else g
+25  class = b
+26  class = b
+27  class = g
+28  if x4<-0.15535 then node 34 elseif x4>=-0.15535 then node 35 else g
+29  class = g
+30  class = b
+31  if x4<-0.68006 then node 36 elseif x4>=-0.68006 then node 37 else g
+32  class = b
+33  class = g
+34  class = g
+35  class = b
+36  class = b
+37  class = g
 
 # Discussion (if needed)
 

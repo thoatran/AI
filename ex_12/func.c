@@ -117,6 +117,7 @@ static void compute_layer_outputs(double* outputs, size_t output_count, double c
 static double sigmoid(double x)
 {
     // TODO: 1. Write unipolar sigmoid function (lambda = 1).
+    return (1/(1+exp(-x)));
 }
 
 
@@ -130,6 +131,12 @@ static double sigmoid(double x)
 static double inner_product(double const* v1, double const* v2, size_t length)
 {
     // TODO: 2. Calculate the inner product.
+    double sum = 0;
+    for( size_t i = 0; i < length; i++) {
+    	double tmp = v1[i] * v2[i];
+    	sum += tmp;
+    }
+    return sum;
 }
 
 
@@ -149,6 +156,7 @@ double compute_errors(Mlp3* mlp, TeacherVector const* teacher_vector)
 
         // TODO: 3. Calculate the error of the output layer for backpropagation.
         //          Note that the activation function in this program is `the unipolar sigmoid function`.
+        mlp->output_errors[i] = diff * (1.0 - output) * output;
 
         // Calculate error of MLP (error of actual output).
         error += (diff * diff) / 2.0;
@@ -183,7 +191,7 @@ static void update_weights(double** weights, size_t neuron_count, double const* 
     for (size_t i = 0; i < neuron_count; i++) {
         for (size_t j = 0; j < input_dimension; j++) {
             // TODO:: 4. Update weight based on backpropagation.
-            weights[i][j] += ;
+            weights[i][j] += learning_rate * errors[i] * inputs[j];
         }
 
         // Update the threshold.

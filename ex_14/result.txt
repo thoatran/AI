@@ -1,0 +1,2 @@
+Optimal point: (0.0529, 0.0382)
+Optimal function value: 0.004253

@@ -1,0 +1,4 @@
+Observation:
++ Fitness value of the first generation reached a very high value, it was approximately 200.
++ Fitness value decreased dramatically from the first generation to the fifth generation (from roughly 200 downto 15).
++ From the sixth generation forwards, fitness value reduced slightly and got 0.00425297 at the twentieth generation. This result was very neer 0.00, so it ensured the effectiveness of the algorithm.
